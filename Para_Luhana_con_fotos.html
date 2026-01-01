@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Luhana 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #3a2a4d);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.45);
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 420px;
+      animation: fade 0.8s ease;
+      z-index: 2;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 20px;
+      background: #ff7ac8;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .yes-btn {
+      background: #7cffc1;
+      color: #1e1e2f;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    iframe { display:none; }
+
+    @keyframes fade {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Música -->
+<iframe 
+  src="https://www.youtube.com/embed/8G4s8H7R0aE?autoplay=1&loop=1&playlist=8G4s8H7R0aE"
+  allow="autoplay">
+</iframe>
+
+<div class="card" id="content">
+  <h1>🎆 Feliz Año Nuevo, Luhana 🎆</h1>
+  <p>Quería empezar este año de una forma especial…</p>
+  <button onclick="next()">Seguir leyendo</button>
+</div>
+
+<script>
+  let step = 0;
+  const content = document.getElementById("content");
+
+  function next() {
+    step++;
+
+    if (step === 1) {
+      content.innerHTML = `
+        <h2>Nuestros momentos 💕</h2>
+        <img src="foto1.jpg">
+        <p>Desde el 12 de octubre, sin darme cuenta, me hiciste sentir en casa.</p>
+        <button onclick="next()">Continuar</button>
+      `;
+    }
+
+    if (step === 2) {
+      content.innerHTML = `
+        <img src="foto2.jpg">
+        <p>
+          Sé que esta no es la forma ideal de decir algo así.
+          Me gustaría mirarte a los ojos,
+          pero no quiero esperar más.
+        </p>
+        <button onclick="next()">Seguir</button>
+      `;
+    }
+
+    if (step === 3) {
+      content.innerHTML = `
+        <img src="foto3.jpg">
+        <h3>¿Querés ser mi novia? 💖</h3>
+        <p>Que cada primero sea nuestro aniversario.</p>
+        <button class="yes-btn" onclick="yes()">Sí 💕</button>
+        <p style="margin-top:10px;"><b>— Nicolás</b></p>
+      `;
+    }
+  }
+
+  function yes() {
+    content.innerHTML = `
+      <h1>✨ Siempre brillarás ✨</h1>
+      <p>Gracias por decir que sí 💖</p>
+      <p>Feliz primer mes juntos.</p>
+      <p><b>Nicolás</b></p>
+    `;
+  }
+</script>
+
+</body>
+</html>
